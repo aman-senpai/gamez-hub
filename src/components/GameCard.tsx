@@ -1,4 +1,13 @@
-import { Card, CardBody, HStack, Heading, Image, Text } from "@chakra-ui/react";
+import {
+    Card,
+    CardBody,
+    HStack,
+    Heading,
+    Image,
+    Skeleton,
+    SkeletonText,
+    Text,
+} from "@chakra-ui/react";
 import { Game } from "../hooks/useGames";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
@@ -28,3 +37,18 @@ const GameCard = ({ game }: GameProps) => {
 };
 
 export default GameCard;
+
+GameCard.Skeleton = () => {
+    return (
+        <Card
+            width="220px"
+            borderRadius={10}
+            overflow={"hidden"}
+        >
+            <Skeleton height={"200px"} />
+            <CardBody>
+                <SkeletonText />
+            </CardBody>
+        </Card>
+    );
+};
