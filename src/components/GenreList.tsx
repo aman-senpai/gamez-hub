@@ -1,4 +1,5 @@
 import {
+    Button,
     HStack,
     Image,
     List,
@@ -11,12 +12,12 @@ import getCroppedImageUrl from "../services/image-url";
 
 const GenreList = () => {
     const { data: genres, isLoading, error } = useGeneres();
-    const skeleton = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+    const skeleton = [1, 2, 3, 4, 5, 6, 21, 32, 33, 34, 35, 36];
 
     if (error) null;
     return (
         <List>
-            {isLoading && skeleton.map((l) => <GenreList.Skeleton />)}
+            {isLoading && skeleton.map((l) => <GenreList.Skeleton key={l} />)}
             {genres.map((genre) => (
                 <ListItem
                     key={genre.id}
@@ -28,7 +29,13 @@ const GenreList = () => {
                             borderRadius={8}
                             src={getCroppedImageUrl(genre.image_background)}
                         />
-                        <Text fontSize="lg">{genre.name}</Text>
+                        <Button
+                            variant="link"
+                            fontSize="lg"
+                            onClick={() => console.log(genre.name)}
+                        >
+                            {genre.name}
+                        </Button>
                     </HStack>
                 </ListItem>
             ))}
