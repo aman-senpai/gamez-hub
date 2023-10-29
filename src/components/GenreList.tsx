@@ -17,9 +17,7 @@ interface Props {
 
 const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
     const { data: genres, isLoading, error } = useGeneres();
-    const skeleton = [1, 2, 3, 4, 5, 6, 21, 32, 33, 34, 35, 36];
 
-    if (error) null;
     return (
         <>
             <Heading
@@ -29,8 +27,6 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
                 Genres
             </Heading>
             <List>
-                {isLoading &&
-                    skeleton.map((l) => <GenreList.Skeleton key={l} />)}
                 {genres.map((genre) => (
                     <ListItem
                         key={genre.id}
