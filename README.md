@@ -8,6 +8,10 @@ Gamez-Hub is a web application built using modern technologies to provide a seam
 * **Rawg API:** Integrated to fetch game data and images, enhancing the application with up-to-date information.
 * **React Router:** Facilitates navigation within the application, ensuring a smooth transition between different pages.
 
+## Environment
+
+Create a local `.env` file from `.env.example` and set `VITE_RAWG_API_KEY` to your RAWG API key before running the app.
+
 ## Features
 
 ### Light and Dark Theme

@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 key.ts
+.env
+.env.*
+!.env.example
 
 node_modules
 dist
